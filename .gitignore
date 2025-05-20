@@ -1,0 +1,32 @@
+# Build outputs
+bin/
+obj/
+out/
+
+# Visual Studio user files
+*.suo
+*.user
+*.userosscache
+.vs/
+
+# NuGet packages folder
+**/packages/*
+!**/packages/build/
+
+# Test results
+TestResults/
+
+# Rider
+.idea/
+
+# Node modules (if used)
+node_modules/
+wwwroot/lib/
+
+# Logs and OS files
+*.log
+Thumbs.db
+desktop.ini
+
+# Dotnet user secrets
+secrets.json

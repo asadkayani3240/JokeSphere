@@ -1,0 +1,25 @@
+﻿@model IEnumerable<JokeSphere.Models.Joke>
+@{
+    ViewData["Title"] = "All Jokes";
+}
+<h1>@ViewData["Title"]</h1>
+<table class="table">
+    <thead>
+        <tr><th>ID</th><th>Setup</th><th></th></tr>
+    </thead>
+    <tbody>
+        @foreach (var j in Model)
+        {
+            <tr>
+                <td>@j.Id</td>
+                <td>@j.Setup</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@j.Id" class="btn btn-sm btn-primary">
+                        Show Punchline
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Random" class="btn btn-success">Tell Me a Random Joke</a>

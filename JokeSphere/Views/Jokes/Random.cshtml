@@ -1,0 +1,13 @@
+﻿@model JokeSphere.Models.Joke
+@{
+    ViewData["Title"] = "Random Joke";
+}
+<h1>@ViewData["Title"]</h1>
+<p>@Model.Setup</p>
+<form asp-action="Details" method="get">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <button type="submit" class="btn btn-primary">Show Punchline</button>
+</form>
+<hr />
+<a asp-action="Random" class="btn btn-secondary">Another Random Joke</a>
+<a asp-action="Index" class="btn btn-link">See All Jokes</a>

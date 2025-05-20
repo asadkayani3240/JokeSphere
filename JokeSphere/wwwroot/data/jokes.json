@@ -1,0 +1,52 @@
+[
+  {
+    "Id": 1,
+    "Setup": "Why did the scarecrow win an award?",
+    "Punchline": "Because he was outstanding in his field!"
+  },
+  {
+    "Id": 2,
+    "Setup": "What do you call fake spaghetti?",
+    "Punchline": "An impasta."
+  },
+  {
+    "Id": 3,
+    "Setup": "Why don’t scientists trust atoms?",
+    "Punchline": "Because they make up everything!"
+  },
+  {
+    "Id": 4,
+    "Setup": "What did the grape do when he got stepped on?",
+    "Punchline": "He let out a little wine."
+  },
+  {
+    "Id": 5,
+    "Setup": "Why did the bicycle fall over?",
+    "Punchline": "Because it was two-tired."
+  },
+  {
+    "Id": 6,
+    "Setup": "What do you call cheese that isn’t yours?",
+    "Punchline": "Nacho cheese."
+  },
+  {
+    "Id": 7,
+    "Setup": "Why can’t your nose be 12 inches long?",
+    "Punchline": "Because then it would be a foot."
+  },
+  {
+    "Id": 8,
+    "Setup": "How does a penguin build its house?",
+    "Punchline": "Igloos it together."
+  },
+  {
+    "Id": 9,
+    "Setup": "Why did the math book look sad?",
+    "Punchline": "Because it had too many problems."
+  },
+  {
+    "Id": 10,
+    "Setup": "What do you call a factory that makes okay products?",
+    "Punchline": "A satisfactory."
+  }
+]

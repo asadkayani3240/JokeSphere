@@ -1,0 +1,10 @@
+﻿@model JokeSphere.Models.Joke
+@{
+    ViewData["Title"] = "Joke Punchline";
+}
+<h1>@ViewData["Title"]</h1>
+<p><strong>@Model.Setup</strong></p>
+<p class="lead">@Model.Punchline</p>
+<hr />
+<a asp-action="Random" class="btn btn-secondary">Another Random Joke</a>
+<a asp-action="Index" class="btn btn-link">Back to All Jokes</a>
