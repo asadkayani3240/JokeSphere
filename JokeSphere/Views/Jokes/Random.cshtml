@@ -2,12 +2,51 @@
 @{
     ViewData["Title"] = "Random Joke";
 }
-<h1>@ViewData["Title"]</h1>
-<p>@Model.Setup</p>
-<form asp-action="Details" method="get">
-    <input type="hidden" name="id" value="@Model.Id" />
-    <button type="submit" class="btn btn-primary">Show Punchline</button>
-</form>
-<hr />
-<a asp-action="Random" class="btn btn-secondary">Another Random Joke</a>
-<a asp-action="Index" class="btn btn-link">See All Jokes</a>
+
+<div class="flex justify-center mt-12 px-4">
+    <div class="card w-full max-w-lg bg-base-100 shadow-2xl"
+         x-data="{ show: false }">
+
+        <div class="card-body p-6 space-y-6">
+
+            <!-- Header -->
+            <h2 class="text-3xl font-bold">Random Joke</h2>
+
+            <!-- Setup -->
+            <p class="text-xl text-gray-700">@Model.Setup</p>
+
+            <!-- Inline punchline reveal -->
+            <div class="space-y-4">
+                <button x-on:click="show = true"
+                        x-show="!show"
+                        class="btn btn-primary w-full transition hover:scale-105">
+                    Show Punchline
+                </button>
+
+                <p x-on:click="show = false"
+                   x-show="show"
+                   x-transition.opacity.duration.500ms
+                   class="text-2xl text-secondary font-semibold cursor-pointer">
+                    @Model.Punchline
+                </p>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex gap-4">
+                <a asp-action="Random"
+                   class="btn btn-secondary flex-1 hover:btn-accent transition-colors">
+                    Next Joke
+                </a>
+                <a asp-action="Index"
+                   class="btn btn-outline flex-1">
+                    All Jokes
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+}

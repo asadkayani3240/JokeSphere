@@ -1,10 +1,35 @@
 ﻿@model JokeSphere.Models.Joke
 @{
-    ViewData["Title"] = "Joke Punchline";
+    ViewData["Title"] = "Random Joke";
 }
-<h1>@ViewData["Title"]</h1>
-<p><strong>@Model.Setup</strong></p>
-<p class="lead">@Model.Punchline</p>
-<hr />
-<a asp-action="Random" class="btn btn-secondary">Another Random Joke</a>
-<a asp-action="Index" class="btn btn-link">Back to All Jokes</a>
+<div class="flex justify-center mt-10" x-data="{ show: false }">
+    <div class="card w-full max-w-lg bg-base-100 shadow-xl">
+        <div class="card-body space-y-6">
+            <h2 class="card-title text-3xl">Random Joke</h2>
+            <p class="text-xl">@Model.Setup</p>
+
+            <!-- Reveal inline -->
+            <button x-show="!show"
+                    x-on:click="show = true"
+                    class="btn btn-primary w-full">
+                Show Punchline
+            </button>
+
+            <p x-show="show"
+               x-on:click="show = false"
+               x-transition
+               class="text-2xl text-secondary cursor-pointer">
+                @Model.Punchline
+            </p>
+
+            <div class="flex gap-4">
+                <a asp-action="Random" class="btn btn-secondary flex-1">
+                    Another Random
+                </a>
+                <a asp-action="Index" class="btn btn-outline flex-1">
+                    All Jokes
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
